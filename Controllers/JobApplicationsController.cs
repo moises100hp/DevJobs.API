@@ -30,7 +30,9 @@ namespace DevJobs.API.Controllers
                 model.ApplicantEmail,
                 id);
 
-            jobVacancy.Applications.Add(application);
+           // jobVacancy.Applications.Add(application);
+           _context.JobApplications.Add(application);
+            _context.SaveChanges();
 
             return NoContent();
         }
