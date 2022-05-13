@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DevJobs.API.Persistence
 {
-    public class DevJobsContext : DbContext
+    public class IJobvacancyRepository : DbContext
     {
-        public DevJobsContext(DbContextOptions<DevJobsContext> options) : base(options)
+        public IJobvacancyRepository(DbContextOptions<IJobvacancyRepository> options) : base(options)
         {
             
         }

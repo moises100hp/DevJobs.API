@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DevJobs.API.Persistence.Migrations
 {
-    [DbContext(typeof(DevJobsContext))]
+    [DbContext(typeof(IJobvacancyRepository))]
     partial class DevJobsContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DevJobs.API.Persistence.Migrations
 {
-    [DbContext(typeof(DevJobsContext))]
+    [DbContext(typeof(IJobvacancyRepository))]
     [Migration("20220513032635_InitialMigration")]
     partial class InitialMigration
     {
