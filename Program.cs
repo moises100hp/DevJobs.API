@@ -5,8 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var conectionString = builder.Configuration.GetConnectionString("DevJobsCs");
-builder.Services.AddDbContext<DevJobsContext>(options => 
-    options.UseInMemoryDatabase("Devjobs"));
+builder.Services.AddDbContext<DevJobsContext>(options =>
+    //options.UseInMemoryDatabase("Devjobs"));
+    options.UseSqlServer(conectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
