@@ -4,6 +4,7 @@ using DevJobs.API.Persistence;
 using DevJobs.API.Persistence.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 namespace DevJobs.API.Controllers
 {
@@ -39,9 +40,25 @@ namespace DevJobs.API.Controllers
         }
 
         // POST api/job-vacancies
+        /// <summary>
+        /// Cadastrar uma vaga de emprego.
+        /// </summary>
+        /// <remarks>
+        /// {
+        ///  "title": "Dev .NET",
+        ///  "description": "Vaga para sustentação de aplicações .NET Core",
+        ///  "company": "string",
+        ///  "isRemote": true,
+        ///  "salaryRange": "string"
+        ///}
+        ///</remarks>
+        /// <param name="model">Dados da vaga.</param>
+        /// <returns>Objeto recém-criado</returns>
+        /// <response code="201">Sucesso.</response>
         [HttpPost]
         public IActionResult Post(AddJobVacancyInputModel model)
         {
+            Log.Information("POST JobVacancy chamado");
             var jobVacancy = new JobVacancy(
                 model.Title,
                 model.Description,
